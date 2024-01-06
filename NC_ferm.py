@@ -37,9 +37,11 @@ if __name__ == '__main__':
             if(pg.position().x > startX + 50 or pg.position().x < startX-50 or pg.position().y > startY+10 or pg.position().y < startY-50):
                 pg.moveTo(startX,startY, 0.2, pg.easeOutQuad)
             pg.move(random.randint(1,20)-random.randint(1,20) , random.randint(1,10)-random.randint(1,10),0.25)
-            pg.click(clicks=2, interval = round(random.uniform(clickerSpeed - 0.05 , clickerSpeed + 0.05),2))
+            pg.click(clicks=2, interval = clickerSpeed)
             if(msvcrt.kbhit()):
                 break
     except KeyboardInterrupt:
         print('\n') 
+
+
 
