@@ -1,5 +1,5 @@
 var numUniqueEmails = function(emails) {
-    let obj = {}
+    let validList = new Set()
     for(let i=0;i<emails.length;i++){
         let localName = emails[i].split('@')
         let validName = "";
@@ -13,10 +13,9 @@ var numUniqueEmails = function(emails) {
             }
             
         }
-       
-        obj[validName+"@"+localName[1]]=null
-
+    
+        validList.add(validName+"@"+localName[1])
     }
-    return Object.keys(obj).length
+    return validList.size
 };
 
